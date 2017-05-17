@@ -8,13 +8,13 @@ Head to https://developer.zendesk.com/rest_api/docs/core/introduction and read t
 
 Once you have those values entered on lines 2, 3, and 4 in tickets.php, you can export all your tickets via the simple interface, which allows for a start date, end date, and for tickets that were created or updated.
 
-Just set up this file on any PHP server and plug in those values on lines 2, 3, and 4.  It uses cURL http://php.net/manual/en/book.curl.php to securely access the ZenDesk API and retrieve data.  
+Just set up this file on any PHP server and plug in those values on lines 2, 3, and 4.  It uses a cURL function, which was found at https://gist.github.com/apanzerj/2920899, to securely access the ZenDesk API and retrieve data.  
 
-The application makes calls to the following APIs:
-Tickets - https://developer.zendesk.com/rest_api/docs/core/tickets
-Organizations - https://developer.zendesk.com/rest_api/docs/core/organizations
-Users - https://developer.zendesk.com/rest_api/docs/core/users
-Groups - https://developer.zendesk.com/rest_api/docs/core/groups
-Ticket Comments - https://developer.zendesk.com/rest_api/docs/core/ticket_comments
+The application then makes calls to the following APIs, retrieves the data as JSON, and stores it into a local array:
+- Tickets - https://developer.zendesk.com/rest_api/docs/core/tickets
+- Organizations - https://developer.zendesk.com/rest_api/docs/core/organizations
+- Users - https://developer.zendesk.com/rest_api/docs/core/users
+- Groups - https://developer.zendesk.com/rest_api/docs/core/groups
+- Ticket Comments - https://developer.zendesk.com/rest_api/docs/core/ticket_comments
 
 From there, it exports everything into a CSV file, which can be used as you desire.  Software such as invoicing systems will accept a CSV file import so the fields can also be edited to match the API you're trying to import into.
